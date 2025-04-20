@@ -14,6 +14,7 @@ export default function Home() {
           priority
         />
         <p>Hello world!</p>
+        <a href="/projects">Projects</a>
       </main>
     </div>
   );
