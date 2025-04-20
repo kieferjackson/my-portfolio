@@ -1,0 +1,29 @@
+{
+    "copoly-calc": {
+        "name": "Copoly-Calc",
+        "repo": "https://github.com/kieferjackson/copoly-calc",
+        "href": "https://kieferjackson.github.io/copoly-calc/",
+        "tech": [
+            "React"
+        ]
+    },
+    "merchant-alchemist": {
+        "name": "Merchant Alchemist",
+        "repo": "https://github.com/lucasz10/merchant-alchemist",
+        "tech": [
+            "React",
+            "GraphQL",
+            "MongoDB"
+        ]
+    },
+    "connect-talk-therapy": {
+        "name": "Connect Talk Therapy Website",
+        "href": "https://www.connecttalktherapy.com/",
+        "tech": [
+            "Django",
+            "Redis",
+            "PostgreSQL",
+            "FastAPI"
+        ]
+    }
+}
