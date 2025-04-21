@@ -1,16 +1,16 @@
 import Link from "next/link";
 
 import styles from "./page.module.css";
-import projects from "@/app/data/projects.json";
+import { iterProjects } from "./utils";
 
 export default function Projects() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <ul>
-        {Array.from(Object.keys(projects)).map((project) => (
+        {iterProjects((project, data) => (
           <li key={project}>
-            <Link href={`/projects/${project}`}>{projects[project].name}</Link>
+            <Link href={`/projects/${project}`}>{data.name}</Link>
           </li>
         ))}
         </ul>

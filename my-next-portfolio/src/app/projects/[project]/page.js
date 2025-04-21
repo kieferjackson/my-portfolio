@@ -1,19 +1,15 @@
 import Link from "next/link";
 
-import projects from "@/app/data/projects.json";
+import { getProjectById, generateProjectParams } from "../utils";
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
-  return Array.from(
-    Object.keys(projects)).map((project) => ({ project })
-  );
-}
+export const generateStaticParams = generateProjectParams;
 
 export default async function Page({ params }) {
   const { project } = await params;
 
-  const projectData = projects[project];
+  const projectData = getProjectById(project);
 
   return (
     <div>
