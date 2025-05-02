@@ -1,17 +1,35 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Micro_5, Orbitron, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 import NavBar from "./components/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const orbitron = Orbitron({ 
+  variable: "--font-orbitron",
+  subsets: ['latin'] 
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"]
 });
+
+/** NOTE: The path is relative to the file where the local font is called */
+const nicoMoji = localFont({ 
+  src: [{
+    path: "../../public/fonts/nicomoji/nicomoji.woff2",
+    weight: '400',
+    style: 'normal'
+  }],
+  variable: "--font-nico-moji",
+  subsets: ["latin"]
+});
+
+const usedFontVars = [
+  orbitron.variable,
+  dmSans.variable,
+  nicoMoji.variable,
+];
 
 export const metadata = {
   title: "Kiefer Jackson - Portfolio",
@@ -21,13 +39,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
-        <link rel="manifest" href="/manifest.json"/>
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={usedFontVars.join(' ')}>
         <NavBar></NavBar>
         {children}
       </body>
