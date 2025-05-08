@@ -2,6 +2,7 @@
     "copoly-calc": {
         "name": "Copoly-Calc",
         "info": "Calculator app designed to streamline and simplify copolymer calculations.",
+        "theme": "#1968F1",
         "repo": "https://github.com/kieferjackson/copoly-calc",
         "href": "https://kieferjackson.github.io/copoly-calc/",
         "tech": [
@@ -11,6 +12,7 @@
     "merchant-alchemist": {
         "name": "Merchant Alchemist",
         "info": "Web game allowing registered users to brew and sell potions.",
+        "theme": "#722F8F",
         "repo": "https://github.com/lucasz10/merchant-alchemist",
         "tech": [
             "React",
@@ -21,6 +23,7 @@
     "connect-talk-therapy": {
         "name": "Connect Talk Therapy Website",
         "info": "Company website for Connect Talk Therapy LLC.",
+        "theme": "#4C1130",
         "href": "https://www.connecttalktherapy.com/",
         "tech": [
             "Django",

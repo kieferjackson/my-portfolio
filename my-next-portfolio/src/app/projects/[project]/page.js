@@ -26,8 +26,8 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <h1>My Project: {id}</h1>
-      <p>Name: {projectData.name}</p>
+      <h1 className="text-3xl font-bold underline">My Project: {id}</h1>
+      <p style={{ backgroundColor: projectData.theme }}>Name: {projectData.name}</p>
       <p>Description: {projectData.info}</p>
       {(projectData.href ? <Link href={projectData.href}>Webpage Link</Link> : <code>Nothing here</code>)}
       {(projectData.repo ? <Link href={projectData.repo}>Github Repo</Link> : <code>Nothing here</code>)}
