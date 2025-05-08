@@ -32,7 +32,10 @@ const usedFontVars = [
 ];
 
 export const metadata = {
-  title: "Kiefer Jackson - Portfolio",
+  title: {
+    template: "Kiefer Jackson's %s",
+    default: "Kiefer Jackson's Portfolio"
+  },
   description: "Web portfolio for Kiefer Jackson, detailing his skills and past projects."
 };
 
