@@ -1,7 +1,14 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #181818;
+  --amp-yellow: #F6FF00;
+  --volt-blue:  #130729;
+
+  --size-font: 16px;
+  --size-max-width: 1200px;
+  --size-margin: calc(var(--size-font) * 3);
+  --size-margin-half: calc(var(--size-margin) / 2);
 }
 
 @media (prefers-color-scheme: dark) {

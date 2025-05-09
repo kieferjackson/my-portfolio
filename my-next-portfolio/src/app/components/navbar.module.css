@@ -1,7 +1,35 @@
-.navbar {
-    background-color: green;
+nav.navbar {
+    overflow: hidden;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+    background: var(--volt-blue);
+    border-bottom: 5px solid var(--amp-yellow);
+    z-index: 2;
 }
 
-.link {
-    color: pink;
+a.navbar-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25em;
+    font-family: var(--font-nico-moji);
+    font-size: large;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+a.navbar-link:hover {
+    color: var(--amp-yellow);
+}
+
+a.navbar-link::before {
+    content: '/';
+    color: var(--amp-yellow);
 }
