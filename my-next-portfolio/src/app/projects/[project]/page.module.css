@@ -1,0 +1,18 @@
+
+.projectNavBtn {
+    cursor: pointer;
+    font-size: 0;
+    
+    width: 30px;
+    height: 30px;
+    background-color: var(--amp-yellow);
+
+    box-sizing: border-box;
+    border: 3px solid var(--ohm-violet);
+    border-radius: 50%;
+
+    &.disabled {
+        cursor: not-allowed;
+        background-color: var(--background-gray);
+    }
+}

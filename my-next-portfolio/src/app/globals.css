@@ -2,7 +2,9 @@
 :root {
   --background: #ffffff;
   --foreground: #181818;
+  --background-gray: #727272;
   --amp-yellow: #F6FF00;
+  --ohm-violet: #433C52;
   --volt-blue:  #130729;
 
   --size-font: 16px;

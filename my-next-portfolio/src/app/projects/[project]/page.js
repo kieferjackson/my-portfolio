@@ -29,7 +29,7 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <ProjectNavButton projectId={prevProject}>Previous</ProjectNavButton>
+      <ProjectNavButton projectId={prevProject} previous={true}>Previous</ProjectNavButton>
       <ProjectNavButton projectId={nextProject}>Next</ProjectNavButton>
 
       <p style={{ backgroundColor: projectData.theme }}>Description: {projectData.info}</p>
