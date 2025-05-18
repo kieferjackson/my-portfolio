@@ -10,6 +10,27 @@ export function getProjectById(id) {
     return projectsMap.has(id) ? projectsMap.get(id) : null;
 }
 
+export function getProjectNeighbors(id) {
+    const projectsMap = getProjectsMap();
+
+    let prevProject;
+    const neighbors = new Array(2).fill(null);
+
+    for (let projectId of projectsMap.keys()) {
+        if (prevProject == id) {
+            neighbors[1] = projectId;
+            break;
+        }
+        else if (projectId != id) {
+            neighbors[0] = projectId;
+        }
+
+        prevProject = projectId;
+    }
+
+    return neighbors;
+}
+
 export function iterProjects(handler) {
     return Object.entries(projects).map(([ project, data ]) => handler(project, data));
 }
