@@ -1,8 +1,9 @@
 import Link from "next/link";
 import ProjectNavButton from "./project-nav-btn";
 import projectInfo from "./project-info";
+import styles from "./page.module.css";
 
-import { getProjectById, getProjectNeighbors, generateProjectParams } from "../utils";
+import { getProjectById, getProjectNumberAndTotal, getProjectNeighbors, generateProjectParams } from "../utils";
 
 export const dynamicParams = false;
 export const generateStaticParams = generateProjectParams;
@@ -26,11 +27,15 @@ export default async function Page({ params }) {
   const ProjectInfo = projectInfo[id];
 
   const [ prevProject, nextProject ] = getProjectNeighbors(id);
+  const [ projectNumber, totalProjects ] = getProjectNumberAndTotal(id).map(num => String(num).padStart(2, '0'));
 
   return (
     <div>
-      <ProjectNavButton projectId={prevProject} previous={true}>Previous</ProjectNavButton>
-      <ProjectNavButton projectId={nextProject}>Next</ProjectNavButton>
+      <nav className={styles.paginationContainer} aria-label="pagination">
+        <ProjectNavButton projectId={prevProject} previous={true}>Previous</ProjectNavButton>
+        <span className={styles.projectNavPagination}>{projectNumber}<span className={styles.slash}>&#47;</span>{totalProjects}</span>
+        <ProjectNavButton projectId={nextProject}>Next</ProjectNavButton>
+      </nav>
 
       <p style={{ backgroundColor: projectData.theme }}>Description: {projectData.info}</p>
       {(projectData.href ? <Link href={projectData.href}>Webpage Link</Link> : <code>Nothing here</code>)}

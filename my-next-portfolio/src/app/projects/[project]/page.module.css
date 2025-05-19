@@ -1,4 +1,10 @@
 
+.paginationContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
 .projectNavBtn {
     cursor: pointer;
     font-size: 0;
@@ -14,5 +20,16 @@
     &.disabled {
         cursor: not-allowed;
         background-color: var(--background-gray);
+    }
+}
+
+.projectNavPagination {
+    font-family: var(--font-orbitron), Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-size: x-large;
+    color: var(--foreground);
+
+    >.slash {
+        color: var(--background-gray);
     }
 }

@@ -10,6 +10,13 @@ export function getProjectById(id) {
     return projectsMap.has(id) ? projectsMap.get(id) : null;
 }
 
+export function getProjectNumberAndTotal(id) {
+    const projectKeys = Array.from(getProjectsMap().keys());
+    const projectIndex = projectKeys.findIndex(projectId => projectId == id);
+
+    return [projectIndex + 1, projectKeys.length];
+}
+
 export function getProjectNeighbors(id) {
     const projectsMap = getProjectsMap();
 
