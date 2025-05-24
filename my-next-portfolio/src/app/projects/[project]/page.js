@@ -30,26 +30,27 @@ export default async function Page({ params }) {
   const [ projectNumber, totalProjects ] = getProjectNumberAndTotal(id).map(num => String(num).padStart(2, '0'));
 
   return (
-    <div>
-      <nav className={styles.paginationContainer} aria-label="pagination">
-        <ProjectNavButton projectId={prevProject} previous={true}>Previous</ProjectNavButton>
-        <span className={styles.projectNavPagination}>{projectNumber}<span className={styles.slash}>&#47;</span>{totalProjects}</span>
-        <ProjectNavButton projectId={nextProject}>Next</ProjectNavButton>
-      </nav>
+    <main className={styles.main}>
+      <header className={styles.header}>
+        <nav className={styles.paginationContainer} aria-label="pagination">
+          <ProjectNavButton projectId={prevProject} previous={true}>Previous</ProjectNavButton>
+          <span className={styles.projectNavPagination}>{projectNumber}<span className={styles.slash}>&#47;</span>{totalProjects}</span>
+          <ProjectNavButton projectId={nextProject}>Next</ProjectNavButton>
+        </nav>
 
-      <p style={{ backgroundColor: projectData.theme }}>Description: {projectData.info}</p>
-      {(projectData.href ? <Link href={projectData.href}>Webpage Link</Link> : <code>Nothing here</code>)}
-      {(projectData.repo ? <Link href={projectData.repo}>Github Repo</Link> : <code>Nothing here</code>)}
-      <ul>
-        {projectData.tech.map((tech) => {
-          return <li key={tech}>{tech}</li>;
-        })}
-      </ul>
-
-      <hgroup>
-        <h1>{projectData.name}</h1>
-        <ProjectInfo></ProjectInfo>
-      </hgroup>
-    </div>
+        <h1 id={styles.project}>{projectData.name}</h1>
+      </header>
+      <ProjectInfo></ProjectInfo>
+      <aside className={styles.projectAside}>
+        <p style={{ backgroundColor: projectData.theme }}>Description: {projectData.info}</p>
+        {(projectData.href ? <Link href={projectData.href}>Webpage Link</Link> : <code>Nothing here</code>)}
+        {(projectData.repo ? <Link href={projectData.repo}>Github Repo</Link> : <code>Nothing here</code>)}
+        <ul>
+          {projectData.tech.map((tech) => {
+            return <li key={tech}>{tech}</li>;
+          })}
+        </ul>
+      </aside>
+    </main>
   );
 }
