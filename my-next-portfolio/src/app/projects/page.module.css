@@ -1,7 +1,41 @@
 .main {
-    background-color: red;
+    font-family: var(--font-orbitron), Helvetica, Arial, sans-serif;
+    list-style: none;
+    counter-reset: projects;
 }
 
 .page {
     padding: 100px;
+}
+
+.projectItem {
+    display: grid;
+    grid-template-columns: 4em 1fr;
+    margin-bottom: 1.5em;
+
+    font-size: x-large;
+
+    p {
+        font-size: initial;
+    }
+}
+
+.projectItem::before {
+    content: counter(projects, decimal-leading-zero);
+    counter-increment: projects;
+}
+
+.projectInfo::after {
+    display: block;
+    content: '';
+
+    height: 9px;
+    width: 100%;
+    margin: 0.5em 0;
+
+    --dot-space-between: 3px;
+    --dot-size: 1px;
+    --dot-color: var(--background-gray);
+    background-image: radial-gradient(circle at var(--dot-size) var(--dot-size), var(--dot-color) var(--dot-size), transparent 0);
+    background-size: var(--dot-space-between) var(--dot-space-between);
 }

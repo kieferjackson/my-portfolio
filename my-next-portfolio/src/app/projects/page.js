@@ -12,13 +12,16 @@ export default function Projects() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <ul>
+        <div className={styles.projectsContainer}>
         {iterProjects((project, data) => (
-          <li key={project}>
-            <Link href={`/projects/${project}`}>{data.name}</Link>
-          </li>
+          <section key={project} className={styles.projectItem}>
+              <div className={styles.projectInfo}>
+                <Link href={`/projects/${project}`}>{data.name}</Link>
+                <p>{data.info}</p>
+              </div>
+          </section>
         ))}
-        </ul>
+        </div>
       </main>
     </div>
   );
