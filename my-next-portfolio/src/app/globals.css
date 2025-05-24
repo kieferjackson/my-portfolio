@@ -1,6 +1,6 @@
 
 :root {
-  --background: #ffffff;
+  --background: #ededed;
   --foreground: #181818;
   --background-gray: #727272;
   --amp-yellow: #F6FF00;
@@ -15,7 +15,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #181818;
     --foreground: #ededed;
   }
 }

@@ -7,7 +7,7 @@ nav.navbar {
     display: flex;
     gap: 1em;
     background: var(--volt-blue);
-    border-bottom: 5px solid var(--amp-yellow);
+    border-bottom: 3px solid var(--amp-yellow);
     z-index: 2;
 }
 
@@ -31,5 +31,9 @@ a.navbar-link:hover {
 
 a.navbar-link::before {
     content: '/';
+    color: var(--ohm-violet);
+}
+
+a.navbar-link#current::before {
     color: var(--amp-yellow);
 }

@@ -25,7 +25,7 @@ export default function NavBar() {
 
                 if (route == basepath) {
                     attrs["aria-current"] = "page";
-                    attrs["style"] = { boxShadow: "0 -2px 0 var(--amp-yellow) inset" };
+                    attrs["id"] = styles.current;
                 }
 
                 return <Link key={index} href={`/${route}`} { ...attrs } className={styles["navbar-link"]}>{title}</Link>
