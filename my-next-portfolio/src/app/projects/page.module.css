@@ -1,28 +1,43 @@
 .main {
     font-family: var(--font-orbitron), Helvetica, Arial, sans-serif;
-    list-style: none;
+    max-width: 1001px;
     counter-reset: projects;
 }
 
 .page {
-    padding: 100px;
+    display: flex;
+    justify-content: center;
+    padding: 5% 10%;
 }
 
 .projectItem {
     display: grid;
-    grid-template-columns: 4em 1fr;
+    grid-template-columns: 3em 1fr;
     margin-bottom: 1.5em;
 
     font-size: x-large;
+    font-weight: 800;
 
     p {
         font-size: initial;
+        font-weight: initial;
+        font-family: var(--font-dm-sans);
     }
 }
 
 .projectItem::before {
     content: counter(projects, decimal-leading-zero);
     counter-increment: projects;
+}
+
+.projectInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+
+    >a:hover {
+        color: var(--amp-yellow);
+    }
 }
 
 .projectInfo::after {
