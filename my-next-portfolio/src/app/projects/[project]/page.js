@@ -31,16 +31,19 @@ export default async function Page({ params }) {
 
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <nav className={styles.paginationContainer} aria-label="pagination">
-          <ProjectNavButton projectId={prevProject} previous={true}>Previous</ProjectNavButton>
-          <span className={styles.projectNavPagination}>{projectNumber}<span className={styles.slash}>&#47;</span>{totalProjects}</span>
-          <ProjectNavButton projectId={nextProject}>Next</ProjectNavButton>
-        </nav>
+      <div>
+        <header className={styles.header}>
+          <nav className={styles.paginationContainer} aria-label="pagination">
+            <ProjectNavButton projectId={prevProject} previous={true}>Previous</ProjectNavButton>
+            <span className={styles.projectNavPagination}>{projectNumber}<span className={styles.slash}>&#47;</span>{totalProjects}</span>
+            <ProjectNavButton projectId={nextProject}>Next</ProjectNavButton>
+          </nav>
 
-        <h1 id={styles.project}>{projectData.name}</h1>
-      </header>
-      <ProjectInfo></ProjectInfo>
+          <h1 id={styles.project}>{projectData.name}</h1>
+        </header>
+        <ProjectInfo></ProjectInfo>
+      </div>
+      
       <aside className={styles.projectAside}>
         <p style={{ backgroundColor: projectData.theme }}>Description: {projectData.info}</p>
         {(projectData.href ? <Link href={projectData.href}>Webpage Link</Link> : <code>Nothing here</code>)}
