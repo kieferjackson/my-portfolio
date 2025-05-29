@@ -16,10 +16,6 @@
     padding-bottom: var(--grid-spacing);
 }
 
-#project:hover::before {
-    content: '#';
-}
-
 .paginationContainer {
     display: flex;
     align-items: center;
@@ -70,6 +66,9 @@
 }
 
 .projectAside {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
     padding: 3em;
     background: linear-gradient(50deg, #9786B8, var(--ohm-violet));
 }

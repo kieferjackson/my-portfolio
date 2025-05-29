@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ProjectNavButton from "./project-nav-btn";
+import { IconLink, IconTypes } from "@/app/components/icon-link";
 import projectInfo from "./project-info";
 import styles from "./page.module.css";
 
@@ -29,6 +30,16 @@ export default async function Page({ params }) {
   const [ prevProject, nextProject ] = getProjectNeighbors(id);
   const [ projectNumber, totalProjects ] = getProjectNumberAndTotal(id).map(num => String(num).padStart(2, '0'));
 
+  const projectLinks = [];
+  const linkAttr = { sideLength: 35 };
+
+  if (projectData.href) {
+    projectLinks.push(<IconLink url={projectData.href} type={IconTypes.Website} key={IconTypes.Website} { ...linkAttr }></IconLink>)
+  }
+  if (projectData.repo) {
+    projectLinks.push(<IconLink url={projectData.repo} type={IconTypes.Github} key={IconTypes.Github} { ...linkAttr }></IconLink>)
+  }
+
   return (
     <main className={styles.main}>
       <div>
@@ -45,9 +56,7 @@ export default async function Page({ params }) {
       </div>
       
       <aside className={styles.projectAside}>
-        <p style={{ backgroundColor: projectData.theme }}>Description: {projectData.info}</p>
-        {(projectData.href ? <Link href={projectData.href}>Webpage Link</Link> : <code>Nothing here</code>)}
-        {(projectData.repo ? <Link href={projectData.repo}>Github Repo</Link> : <code>Nothing here</code>)}
+        {projectLinks}
         <ul>
           {projectData.tech.map((tech) => {
             return <li key={tech}>{tech}</li>;
